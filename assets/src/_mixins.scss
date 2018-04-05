@@ -1,0 +1,147 @@
+@mixin bg($url) {
+	background: url($url)no-repeat center;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+}
+
+@mixin bg-layout() {
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.5);
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+}
+
+@mixin bs-font($size, $height) {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: $size;
+	line-height: $height;
+	color: $white;
+	font-weight: 400;
+}
+
+@mixin link-hover() {
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.3);
+		text-decoration: underline;
+	}
+}
+
+@mixin title() {
+	color: $blue;
+	font-family: Ubuntu;
+	font-size: 40px;
+	font-weight: 400;
+	line-height: 47.86px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+@mixin title_art($width, $height,$color ) {
+	&::after {
+		content: '';
+		display: inline-block;
+		width: $width;
+		height: $height;
+		background-color: $color;
+
+	}
+}
+
+@mixin desc() {
+	color: $gray;
+	font-family: Ubuntu;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 30.03px;
+	letter-spacing: 0.9px;
+}
+
+@mixin desc_title() {
+	color: $dark_gray;
+	font-family: Ubuntu;
+	font-size: 23px;
+	font-weight: 400;
+}
+
+@mixin desc_p() {
+	color: $dark_gray-2;
+	font-family: Ubuntu;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 26px;
+}
+
+@mixin btn() {
+	background-color: $blue;
+	color: #ffffff;
+	font-family: Ubuntu;
+	font-size: 15px;
+	font-weight: 400;
+	border: none;
+	display: inline-block;
+	padding: 20px 30px;
+}
+
+@mixin after-bg() {
+	&:after {
+		content: '';
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		display: block;
+		background-color: #dbd7e5;
+	}
+}
+
+@mixin before-bg() {
+	&:before {
+		content: '';
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		right: 0;
+		top: 0;
+		z-index: -1;
+		display: block;
+		background-color: #b6cbd9;
+	}
+}
+
+@mixin img-title {
+	color: $white;
+	font-family: Ubuntu;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 30px;
+	text-transform: uppercase;
+	letter-spacing: 0.9px;
+}
+
+@mixin img-desc {
+	color: $white;
+	font-family: Ubuntu;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 21px;
+	letter-spacing: 0.7px;
+}
+
+@mixin footer-text(){
+color: $gray_light;
+font-family: Ubuntu;
+font-size: 16px;
+font-weight: 400;
+line-height: 25.92px;
+letter-spacing: 1.72px;
+}

@@ -1,0 +1,103 @@
+.prop {
+	padding: 40px 0;
+	position: relative;
+	@include after-bg();
+	@include before-bg();
+	.wrap-box {
+		display: flex;
+		.box {
+			display: flex;
+			align-items: center;
+			width: 50%;
+			.pic {
+				width: 37%;
+			}
+			.content {
+				padding-left: 40px;
+				.title {
+					@include desc_title();
+					padding-bottom: 25px;
+				}
+				.desc {
+					@include desc_p();
+					max-width: 500px;
+					min-height: 107px;
+				}
+				.btn {
+					@include btn();
+					margin-top: 19px;
+				}
+			}
+		}
+		.project {
+			display: flex;
+			align-items: center;
+			width: 50%;
+		}
+	}
+}
+@media (max-width:1200px){
+	#prop .container{
+		padding: 0 15px;
+	}
+}
+@media screen and (max-width:1024px) {
+	.box {
+		flex-direction: column;
+	}
+	.box.right .pic {
+		display: flex;
+		align-items: center;
+		    padding-top: 14%;
+	}
+	.prop .wrap-box .box .content {
+		padding: 40px 0;
+		max-width: 300px;
+		    text-align: center
+	}
+	.content p.desc {
+		min-height: 78px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#prop .container{
+		padding: 0 15px;
+	}
+	.wrap-box {
+		flex-direction: column;
+		
+	}
+	.prop .wrap-box .box .pic,
+	.prop .wrap-box .box.right .pic{
+		width: 30%;
+	}
+	.prop .wrap-box .box,
+	.prop .wrap-box .box.right {
+		width: 100%;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.right {
+		padding-left: 0;
+	}
+	.prop .wrap-box .box .content,
+	.prop .wrap-box .box.right .content {}
+	.prop:after,
+	.prop:before {
+		width: 100%;
+	}
+}
+@media (max-width:525px){
+	.prop .wrap-box .box,
+	.prop .wrap-box .box.right {
+		display: flex;
+		flex-direction: column;
+	}
+	.prop .wrap-box .box .pic,
+	.prop .wrap-box .box.right .pic{
+		width: 54%;
+	}
+	
+		
+}

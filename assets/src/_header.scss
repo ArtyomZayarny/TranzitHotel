@@ -1,0 +1,255 @@
+.header {
+	width: 100%;
+	height: 100vh;
+	padding-bottom: 30px;
+	@include bg('../../assets/img/main-bg.png');
+	@include bg-layout();
+	&__logo {
+		max-width: 169px;
+		max-height: 30px;
+	}
+	&__nav {
+		.link {
+			@include bs-font(18px, 16px);
+			display: inline-block;
+			padding: 32px 15px;
+			transition: all 0.3s ease;
+			@include link-hover();
+		}
+	}
+	.link-tel {
+		@include bs-font(18px, 16px);
+		display: inline-block;
+		padding: 32px 16px;
+		@include link-hover();
+	}
+	&__main {
+		width: 100%;
+		text-align: center;
+		margin-top: 100px;
+		.title {
+			@include bs-font(2.7vw, 40px);
+			color: $white;
+			padding-bottom: 27px;
+		}
+		.sub-title {
+			@include bs-font(1.5vw, 21px);
+			color: $white;
+			padding-bottom: 51px;
+		}
+		.form {
+			height: 56px;
+			display: flex;
+			justify-content: center;
+			&__input {
+				height: 100%;
+				width: 524px;
+				font-size: 23px;
+			}
+			&__search-btn {
+				cursor: pointer;
+				width: 20%;
+				height: 100%;
+				border: none;
+				background-color: $blue;
+				color: $white;
+				.btn-text {
+					@include bs-font(24px, 19px);
+				}
+			}
+		}
+	}
+	.down {
+		width: 100%;
+		text-align: center;
+		&__link {
+			display: inline-block;
+			position: relative;
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+			transition: all 0.3s ease;
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.5);
+				border-radius: 50%;
+			}
+			img {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+		}
+	}
+}
+
+.responsive {
+	position: absolute;
+	top: 80px;
+	left: 0;
+	display: flex!important;
+	flex-direction: column;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.responsive a,
+.responsive div {
+	padding: 10px 0!important;
+	padding-left: 30px!important;
+}
+
+.drop_town::after {
+	display: none;
+}
+
+@media screen and (max-width:1024px) {
+	.header__nav,
+	.header .link-tel {
+		display: none;
+	}
+	.container {
+		max-width: 100%;
+		
+	}
+	.wrap {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		height: auto;
+	}
+	.header__main {
+		margin-top: 0;
+	}
+	.header__logo {
+		padding-left: 2%;
+		min-width: 80%;
+		order: -2;
+	}
+	.burger {
+		padding-right: 2%;
+		font-size: 32px;
+		display: inline-block;
+		order: -1;
+	}
+	.responsive {
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+	.header__main .title {
+		font-size: 4vw;
+	}
+	.header__main .sub-title {
+		font-size: 2.5vw;
+	}
+	.responsive a,
+	.responsive div {
+		padding-left: 15px!important;
+	}
+	.town::after {
+		display: none;
+	}
+	.dropdown {
+		position: relative;
+		display: none;
+		top: 0;
+		background-color: transparent;
+	}
+	.drop_town {
+		display: block;
+	}
+	.drop_town::after {
+		display: inline-block;
+	}
+	.dropdown.dropdown_resp {
+		padding-top: 0!important;
+		padding-bottom: 0!important;
+	}
+	.dropdown__link {
+		margin-bottom: 0;
+	}
+	.header__main{
+		padding: 0 2%;
+	}
+}
+
+@media screen and (max-width:768px) {
+	.header__main .title {
+		font-size: 5vw;
+	}
+	.header__main .sub-title {
+		font-size: 3.5vw;
+	}
+	.responsive a,
+	.responsive div {
+		padding-left: 15px!important;
+	}
+	.header__main .form__input {
+		width: 80%;
+	}
+	.header__main .form__search-btn {
+		width: 20%;
+	}
+	.town::after {
+		display: none;
+	}
+	.dropdown {
+		position: relative;
+		display: none;
+		top: 0;
+		background-color: transparent;
+	}
+	.drop_town {
+		display: block;
+	}
+	.drop_town::after {
+		display: inline-block;
+	}
+	.dropdown.dropdown_resp {
+		padding-top: 0!important;
+		padding-bottom: 0!important;
+	}
+	.dropdown__link {
+		margin-bottom: 0;
+	}
+}
+
+@media screen and (max-width:425px) {
+	
+	.header__main .title {
+		font-size: 4.8vw;
+		line-height: 23px;
+		padding-bottom: 7px;
+	}
+	.header__main .sub-title {
+		font-size: 4vw;
+		line-height: 23px;
+		padding-bottom: 12px;
+	}
+	.header__main .form {
+		height: 40px;
+	}
+	.header__main .form__search-btn .btn-text {
+		font-size: 20px;
+	}
+	.header__main .form__input {
+		width: 70%;
+	}
+	.header__main .form__search-btn {
+		width: 30%;
+	}
+	.town::after {
+		transform: rotate(270deg);
+	}
+	.dropdown.dropdown_resp {
+		padding-top: 0!important;
+		padding-bottom: 0!important;
+	}
+	.dropdown__link {
+		margin-bottom: 0;
+	}
+	
+}
